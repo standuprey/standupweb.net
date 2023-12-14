@@ -1,13 +1,10 @@
 {
   "name": "standupweb",
   "version": "1.0.0",
-  "devDependencies": {
-    "s3-upload": "^0.1.0"
-  },
   "scripts": {
-    "serve": "python -m SimpleHTTPServer 8888",
-    "build": "npm run s3 && npm run invalidate:cloudfront",
-    "s3": "cp aws* src && cd src && node ../node_modules/s3-upload/bin/s3-upload.js",
-    "invalidate:cloudfront": "aws cloudfront create-invalidation --distribution-id E21R5PEDBFR300 --paths \"/*\" --profile perso"
+    "serve": "python3 -m http.server 8000",
+    "build": "npm run s3:sync && npm run cloudfront:invalidate",
+    "s3:sync": "aws s3 sync src s3://standupweb.net --profile perso",
+    "cloudfront:invalidate": "aws cloudfront create-invalidation --distribution-id E21R5PEDBFR300 --paths \"/*\" --profile perso"
   }
 }

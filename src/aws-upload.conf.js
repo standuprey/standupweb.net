@@ -10,7 +10,6 @@ module.exports = {
         "*.ico",
         "*.png",
         "*.xml",
-        "aloro.js",
         "manifest.json",
     ]
 }
