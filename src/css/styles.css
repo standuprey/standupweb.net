@@ -1,0 +1,81 @@
+@font-face {
+  font-family: zx81;
+  src: url("zx81.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: zx81, courier;
+}
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 150px;
+}
+li {
+  display: block;
+  text-align: center;
+}
+a {
+  margin-bottom: 20px;
+  display: block;
+  outline: none;
+}
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-transform: lowercase;
+}
+header {
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+header * {
+  float: left;
+}
+h1 {
+  font-size: 30px;
+}
+header p {
+  margin: 19px 0 0 20px;
+  font-size: 11px;
+}
+.canvas {
+  position: absolute;
+  top: -100px;
+  left: -250px;
+  width: 600px;
+  height: 680px;
+  z-index: -1;
+}
+.separator {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 16px;
+  width: 160px;
+}
+.centered-wrapper {
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+.centered-wrapper > * {
+  width: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.aloro {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}

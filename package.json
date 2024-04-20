@@ -1,0 +1,10 @@
+{
+  "name": "standupweb",
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "build": "npm run s3:sync && npm run cloudfront:invalidate",
+    "s3:sync": "aws s3 sync src s3://standupweb.net --profile perso",
+    "cloudfront:invalidate": "aws cloudfront create-invalidation --distribution-id E21R5PEDBFR300 --paths \"/*\" --profile perso"
+  }
+}
